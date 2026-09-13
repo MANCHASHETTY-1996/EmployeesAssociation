@@ -927,6 +927,33 @@
         });
     </script>
 
+    <div align="center">
+        <audio id="bgMusic" loop>
+            <source src="Images/Music/BackgroudMusic.mpeg" type="audio/mpeg">
+        </audio>
+        <button type="button" onclick="toggleMusic()" id="btnMusic">
+            ▶ Play Music
+        </button>
+        </div>
+        <script>
+            var music = document.getElementById("bgMusic");
+
+            function toggleMusic() {
+
+                if (music.paused) {
+                    music.play();
+                    document.getElementById("btnMusic").innerHTML = "⏹ Stop Music";
+                }
+                else {
+                    music.pause();
+                    music.currentTime = 0;
+                    document.getElementById("btnMusic").innerHTML = "▶ Play Music";
+                }
+            }
+        </script>
+       
+        <br />
+
     <section class="contact" id="contact"><h2 class="title" style="color:#ffd45a">Contact Us</h2><p>Phone: 8310931951<br>Email: rguhemployeesassociation@gmail.com<br>Registration No.: 1207/99-00</p></section>
     <footer>Together We Grow • Together We Prosper<br>© 2026 RGUHS Employees Association (R)</footer>
 </body>
