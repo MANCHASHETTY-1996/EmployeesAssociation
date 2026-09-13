@@ -101,6 +101,14 @@
             white-space: nowrap;
         }
 
+        .kannada-title {
+            font-weight: 500;
+            font-size: 28px;
+            margin: 2px 0 7px;
+            white-space: nowrap;
+            text-align: center;
+        }
+
         .btn {
             display: inline-block;
             background: #06356f;
@@ -207,12 +215,19 @@
         }
 
         .header-inner {
-            max-width: 1250px;
+            width: 100%;
+            max-width: none;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            /*     max-width: 1250px;
             margin: 0 auto;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 28px;
+            gap: 28px;*/
         }
 
         .header-logo {
@@ -222,15 +237,23 @@
             align-items: center;
         }
 
-            .header-logo img {
-                width: 135px;
-                height: 135px;
-                object-fit: contain;
-                border-radius: 50%;
-                background: #fff;
-                padding: 4px;
-                display: block;
-            }
+        .left-logo {
+            justify-content: flex-start;
+        }
+
+        .right-logo {
+            justify-content: flex-end;
+        }
+
+        .header-logo img {
+            width: 135px;
+            height: 135px;
+            object-fit: contain;
+            border-radius: 50%;
+            background: #fff;
+            padding: 0px;
+            display: block;
+        }
 
         .header-text {
             flex: 1;
@@ -239,23 +262,22 @@
             line-height: 1.25;
         }
 
-        .kannada-title,
+
         .english-title {
-            font-weight: 700;
+            font-weight: 500;
             font-size: 28px;
             margin: 2px 0 7px;
+            margin-top: 7px;
+            white-space: nowrap;
         }
 
         .kannada-address,
         .english-address {
-            font-weight: 600;
+            font-weight: 400;
             font-size: 16px;
             margin: 0 0 10px;
         }
 
-        .english-title {
-            margin-top: 7px;
-        }
 
         .english-address {
             margin-bottom: 0;
@@ -338,7 +360,7 @@
     <header class="site-header">
         <div class="header-inner">
 
-            <div class6="header-logo left-logo">
+            <div class="header-logo left-logo">
                 <img src="Images/Logos/rguhs_association-logo.jpg" alt="RGUHS Employees Association Logo">
             </div>
 
@@ -777,14 +799,14 @@
 
                 galleryGrid.insertAdjacentHTML("afterbegin",
                     `<div class="gallery-slide${index === 0 ? " active" : ""}" data-slide="${index}">
-                            <img src="${escapeHtml(imagePath)}" alt="${escapeHtml(title)}"
-                                 onclick="openLightbox('${escapeJs(imagePath)}','${escapeJs(title)}')">
-                            <div class="gallery-caption">${escapeHtml(title)}</div>
-                        </div>`);
+                                <img src="${escapeHtml(imagePath)}" alt="${escapeHtml(title)}"
+                                     onclick="openLightbox('${escapeJs(imagePath)}','${escapeJs(title)}')">
+                                <div class="gallery-caption">${escapeHtml(title)}</div>
+                            </div>`);
 
                 galleryDots.insertAdjacentHTML("beforeend",
                     `<button class="gallery-dot${index === 0 ? " active" : ""}" type="button"
-                            onclick="showSlide(${index})" aria-label="Go to image ${index + 1}"></button>`);
+                                onclick="showSlide(${index})" aria-label="Go to image ${index + 1}"></button>`);
             });
 
             updateSlideUI();
@@ -837,12 +859,12 @@
                 const path = "Documents/" + item.file;
                 documentsList.insertAdjacentHTML("beforeend",
                     `<div class="document-item">
-                            <div class="document-name">📄 ${escapeHtml(item.title || item.file)}</div>
-                            <div class="document-actions">
-                                <a class="doc-btn" href="${escapeHtml(path)}" target="_blank" rel="noopener">View</a>
-                                <a class="doc-btn download" href="${escapeHtml(path)}" download>Download</a>
-                            </div>
-                        </div>`);
+                                <div class="document-name">📄 ${escapeHtml(item.title || item.file)}</div>
+                                <div class="document-actions">
+                                    <a class="doc-btn" href="${escapeHtml(path)}" target="_blank" rel="noopener">View</a>
+                                    <a class="doc-btn download" href="${escapeHtml(path)}" download>Download</a>
+                                </div>
+                            </div>`);
             });
         }
 
