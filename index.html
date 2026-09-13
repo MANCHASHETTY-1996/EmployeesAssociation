@@ -570,7 +570,10 @@
             display: grid;
             gap: 12px;
             max-width: 900px;
-            margin: auto
+            margin: auto;
+            max-height: 200px;
+            overflow-y: auto;
+            overflow-x: hidden;
         }
 
         .document-item {
@@ -791,7 +794,8 @@
             { file: "FD 3 SRS 2026 Dated 4.6.2026-1.pdf", title: "FD 3 SRS 2026 Dated 4.6.2026-1" },
             { file: "High Court Circular for Promotion 11.03.2026.pdf", title: "FHigh Court Circular for Promotion 11.03.2026" },
             { file: "Keshava reddy.pdf", title: "Keshava reddy" },
-            { file: "Siniorty list-2026.pdf", title: "Siniorty list-2026" }
+            { file: "Siniorty list-2026.pdf", title: "Visitor count" },
+            { file: "Reg copy.pdf", title: "Reg copy" }
         ];
 
         const galleryGrid = document.getElementById("galleryGrid");
