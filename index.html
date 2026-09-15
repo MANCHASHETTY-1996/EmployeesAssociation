@@ -55,17 +55,17 @@
         }
 
         nav {
-            background: #fff;
+            background: #9b5d1a;
             padding: 15px;
             text-align: center;
             position: sticky;
-            top: 0;
+            top: 164px;
             box-shadow: 0 2px 8px #0002
         }
 
             nav a {
                 margin: 0 15px;
-                color: #06356f;
+                color: #fff;
                 text-decoration: none;
                 font-weight: bold
             }
@@ -217,6 +217,8 @@
             background: #06356f;
             color: #fff;
             padding: 14px 25px;
+            position: sticky;
+            top: 0;
         }
 
         .header-inner {
@@ -244,10 +246,12 @@
 
         .left-logo {
             justify-content: flex-start;
+            margin-left: 150px;
         }
 
         .right-logo {
             justify-content: flex-end;
+            margin-right: 150px;
         }
 
         .header-logo img {
@@ -359,9 +363,9 @@
         }
     </style>
     <style>
-        nav {
+        /* nav {
             background-color: #eaf2f8;
-        }
+        }*/
     </style>
 </head>
 
@@ -840,14 +844,14 @@
 
                 galleryGrid.insertAdjacentHTML("afterbegin",
                     `<div class="gallery-slide${index === 0 ? " active" : ""}" data-slide="${index}">
-                                            <img src="${escapeHtml(imagePath)}" alt="${escapeHtml(title)}"
-                                                 onclick="openLightbox('${escapeJs(imagePath)}','${escapeJs(title)}')">
-                                            <div class="gallery-caption">${escapeHtml(title)}</div>
-                                        </div>`);
+                                                        <img src="${escapeHtml(imagePath)}" alt="${escapeHtml(title)}"
+                                                             onclick="openLightbox('${escapeJs(imagePath)}','${escapeJs(title)}')">
+                                                        <div class="gallery-caption">${escapeHtml(title)}</div>
+                                                    </div>`);
 
                 galleryDots.insertAdjacentHTML("beforeend",
                     `<button class="gallery-dot${index === 0 ? " active" : ""}" type="button"
-                                            onclick="showSlide(${index})" aria-label="Go to image ${index + 1}"></button>`);
+                                                        onclick="showSlide(${index})" aria-label="Go to image ${index + 1}"></button>`);
             });
 
             updateSlideUI();
@@ -900,12 +904,12 @@
                 const path = "Documents/" + item.file;
                 documentsList.insertAdjacentHTML("beforeend",
                     `<div class="document-item">
-                                            <div class="document-name">📄 ${escapeHtml(item.title || item.file)}</div>
-                                            <div class="document-actions">
-                                                <a class="doc-btn" href="${escapeHtml(path)}" target="_blank" rel="noopener">View</a>
-                                                <a class="doc-btn download" href="${escapeHtml(path)}" download>Download</a>
-                                            </div>
-                                        </div>`);
+                                                        <div class="document-name">📄 ${escapeHtml(item.title || item.file)}</div>
+                                                        <div class="document-actions">
+                                                            <a class="doc-btn" href="${escapeHtml(path)}" target="_blank" rel="noopener">View</a>
+                                                            <a class="doc-btn download" href="${escapeHtml(path)}" download>Download</a>
+                                                        </div>
+                                                    </div>`);
             });
         }
 
