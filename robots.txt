@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://manchashetty-1996.github.io/EmployeesAssociation/sitemap.xml
+Sitemap: https://manchashetty-1996.github.io/rguhsEmployeesAssociation/sitemap.xml
